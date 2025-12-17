@@ -2,7 +2,42 @@
 
 This document outlines the complete structure of the Godot game project, focusing on scenes, scripts, and assets.
 
+---
+
+## 📊 Project Statistics
+
+- **Total Scripts**: ~50+ GDScript files
+- **Total Scenes**: ~30+ scene files
+- **Total Assets**: 
+  - Images/Sprites: 100+ PNG/JPG files
+  - Audio Files: 40+ WAV/MP3 files
+  - Fonts: 5 TTF files
+
+---
+
+## 🎯 Key Features
+
+1. **Multiplayer Support**: Network handler and multiplayer spawners
+2. **Voice & Text Chat**: Integrated communication system
+3. **Multi-Chapter Structure**: Chapter 1, Chapter 2, with puzzles
+4. **Gem Collection System**: Global gem management
+5. **Parallax Backgrounds**: Multiple biome backgrounds
+6. **Interactive Objects**: Crates, rocks, ladders, platforms, traps
+7. **Audio System**: Separate managers for music and sound effects
+8. **Menu System**: Main menu, pause menu, settings with persistence
+
+---
+
+## 🔄 Scene Flow
+
+```
+Main Menu → Introduction Map → Chapter 1 → Puzzle 1 → Puzzle 2 → Chapter 2 → Game Over
+                ↑                                                                  ↓
+                └──────────────────────────────────────────────────────────────────┘
+```
+
 ## 📁 Directory Overview
+
 
 ```
 Final-Year-Project--PARALLAX-/
@@ -725,40 +760,6 @@ scripts/players/
 ├── player_0.gd    # Player 1 controller
 ├── player_1.gd    # Player 2 controller
 └── player.gd      # Base player class
-```
-
----
-
-## 📊 Project Statistics
-
-- **Total Scripts**: ~50+ GDScript files
-- **Total Scenes**: ~30+ scene files
-- **Total Assets**: 
-  - Images/Sprites: 100+ PNG/JPG files
-  - Audio Files: 40+ WAV/MP3 files
-  - Fonts: 5 TTF files
-
----
-
-## 🎯 Key Features
-
-1. **Multiplayer Support**: Network handler and multiplayer spawners
-2. **Voice & Text Chat**: Integrated communication system
-3. **Multi-Chapter Structure**: Chapter 1, Chapter 2, with puzzles
-4. **Gem Collection System**: Global gem management
-5. **Parallax Backgrounds**: Multiple biome backgrounds
-6. **Interactive Objects**: Crates, rocks, ladders, platforms, traps
-7. **Audio System**: Separate managers for music and sound effects
-8. **Menu System**: Main menu, pause menu, settings with persistence
-
----
-
-## 🔄 Scene Flow
-
-```
-Main Menu → Introduction Map → Chapter 1 → Puzzle 1 → Puzzle 2 → Chapter 2 → Game Over
-                ↑                                                                  ↓
-                └──────────────────────────────────────────────────────────────────┘
 ```
 
 ---
