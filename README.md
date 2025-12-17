@@ -36,6 +36,8 @@ Main Menu → Introduction Map → Chapter 1 → Puzzle 1 → Puzzle 2 → Chapt
                 └──────────────────────────────────────────────────────────────────┘
 ```
 
+---
+
 ## 📁 Directory Overview
 
 
@@ -761,8 +763,6 @@ scripts/players/
 ├── player_1.gd    # Player 2 controller
 └── player.gd      # Base player class
 ```
-
----
 
 **Note**: This structure excludes Godot-specific configuration files (.import, .uid, .tres, .gdextension files) and focuses on game content.
 
