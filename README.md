@@ -5,7 +5,7 @@ This document outlines the complete structure of the Godot game project, focusin
 ## 📁 Directory Overview
 
 ```
-Hetao-s-FYP/
+Final-Year-Project--PARALLAX-/
 ├── autoload/                                    # Singleton scripts (autoloaded)
 │   ├── audio_manager.gd
 │   ├── chat_manager.gd
