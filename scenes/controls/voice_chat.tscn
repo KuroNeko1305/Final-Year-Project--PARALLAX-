@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://epiy6x1y4avh"]
+
+[ext_resource type="Script" uid="uid://c7sv0jpjljuxt" path="res://scripts/controls/voice_chat.gd" id="1_0oj5a"]
+
+[node name="VoiceChat" type="Node"]
+script = ExtResource("1_0oj5a")
+
+[node name="VoicePlayer" type="AudioStreamPlayer2D" parent="."]

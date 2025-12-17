@@ -1,0 +1,230 @@
+[gd_scene load_steps=23 format=3 uid="uid://u3n31dqe2lnw"]
+
+[ext_resource type="Texture2D" uid="uid://dq5kdsuf3byv8" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/cave/1.png" id="1_26uft"]
+[ext_resource type="Script" uid="uid://b1yyvcfk0lfjw" path="res://scripts/backgrounds/background.gd" id="1_cvg2v"]
+[ext_resource type="Texture2D" uid="uid://0fvvfacon7ga" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/cave/2.png" id="2_d1gy6"]
+[ext_resource type="Texture2D" uid="uid://c4o5667c103tb" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/light/3fx.png" id="3_8r41e"]
+[ext_resource type="Texture2D" uid="uid://dq47possossqa" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/cave/4.png" id="3_fmd85"]
+[ext_resource type="Texture2D" uid="uid://b8013nv163rpo" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/waterfall/W1007.png" id="3_lx2an"]
+[ext_resource type="Texture2D" uid="uid://rnrb0at5t8x2" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/cave/5.png" id="4_ftpos"]
+[ext_resource type="Texture2D" uid="uid://dj7j4wc6cly8b" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/waterfall/W1008.png" id="4_y0kwc"]
+[ext_resource type="Texture2D" uid="uid://cur3nil2txyl0" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/waterfall/W1001.png" id="5_2kk4v"]
+[ext_resource type="Texture2D" uid="uid://c4u46p7ayyubw" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/cave/9.png" id="5_o7mfe"]
+[ext_resource type="Texture2D" uid="uid://cdnoh2jxvuwbt" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/waterfall/W1002.png" id="6_8r41e"]
+[ext_resource type="Texture2D" uid="uid://n02j427meqdm" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/waterfall/W1003.png" id="7_p5qr4"]
+[ext_resource type="Texture2D" uid="uid://32m3py12eidn" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/waterfall/W1004.png" id="8_8612r"]
+[ext_resource type="Texture2D" uid="uid://cmg2b4dt4piyb" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/waterfall/W1005.png" id="9_s272w"]
+[ext_resource type="Texture2D" uid="uid://c6465i35hljs1" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/waterfall/W1006.png" id="10_4smgr"]
+[ext_resource type="Texture2D" uid="uid://ij4eoeilosjm" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/light/6fx.png" id="13_p5qr4"]
+[ext_resource type="Texture2D" uid="uid://bwnb2n3jx2oer" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/light/8fx.png" id="15_8612r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yrf1f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_s272w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4smgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lx2an")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y0kwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2kk4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8r41e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p5qr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8612r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_4hao3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_peph5"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_wscwp"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wscwp"]
+_data = {
+&"RESET": SubResource("Animation_4hao3"),
+&"fade_in": SubResource("Animation_peph5"),
+&"fade_out": SubResource("Animation_wscwp")
+}
+
+[node name="CaveBackground" type="Node2D"]
+script = ExtResource("1_cvg2v")
+metadata/_edit_horizontal_guides_ = [-162.0, 165.0]
+
+[node name="cave1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="cave1"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_26uft")
+
+[node name="cave2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.45, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="cave2"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_d1gy6")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="light1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.47, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="light1"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_8r41e")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="waterfall1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 1)
+repeat_size = Vector2(512, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="waterfall1"]
+modulate = Color(0, 0.973797, 0.872654, 1)
+position = Vector2(-182, -7)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yrf1f")
+autoplay = "default"
+frame = 3
+
+[node name="cave3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.55, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="cave3"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_fmd85")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="light2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.57, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="light2"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("13_p5qr4")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="waterfall2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.6, 1)
+repeat_size = Vector2(512, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="waterfall2"]
+modulate = Color(0, 0.973797, 0.872654, 1)
+position = Vector2(143, -15)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_yrf1f")
+autoplay = "default"
+frame = 3
+
+[node name="cave5" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="cave5"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_ftpos")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="light3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="light3"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("15_8612r")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="cave6" type="Parallax2D" parent="."]
+z_index = 100
+scroll_scale = Vector2(0.9, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D5" type="Sprite2D" parent="cave6"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_o7mfe")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="waterfall3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.1, 1)
+repeat_size = Vector2(512, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="waterfall3"]
+modulate = Color(0.0771204, 0.279799, 0.363186, 1)
+z_index = 100
+position = Vector2(24, -16)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_yrf1f")
+autoplay = "default"
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wscwp")
+}

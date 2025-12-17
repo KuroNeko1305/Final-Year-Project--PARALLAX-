@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbwr4qgpedyeq"]
+
+[ext_resource type="Script" uid="uid://b34u5sjrun3c8" path="res://scripts/items/transition_door.gd" id="1_h8k5t"]
+[ext_resource type="Texture2D" uid="uid://bsvnhl5dar4pv" path="res://assets/chapter1/puzzle2/Crystals.png" id="2_6l0wq"]
+[ext_resource type="Texture2D" uid="uid://dd6y7y4laidyr" path="res://assets/chapter1/puzzle2/door.png" id="2_nyp8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l0wq"]
+atlas = ExtResource("2_nyp8e")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koumv"]
+atlas = ExtResource("2_nyp8e")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpx8d"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l0wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koumv")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_door"]
+size = Vector2(62, 54)
+
+[node name="TransitionDoor" type="Area2D" groups=["doors"]]
+collision_mask = 2
+script = ExtResource("1_h8k5t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rpx8d")
+animation = &"open"
+
+[node name="BlueGem" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.19607843)
+position = Vector2(-24, -46)
+texture = ExtResource("2_6l0wq")
+region_enabled = true
+region_rect = Rect2(37, 3, 22, 26)
+
+[node name="RedGem" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.19607843)
+position = Vector2(19, -47)
+texture = ExtResource("2_6l0wq")
+region_enabled = true
+region_rect = Rect2(20, 37, 24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_door")

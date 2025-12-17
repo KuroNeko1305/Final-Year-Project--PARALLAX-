@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=3 uid="uid://b24t52nddw10j"]
+
+[ext_resource type="Script" uid="uid://b1yyvcfk0lfjw" path="res://scripts/backgrounds/background.gd" id="1_ld4u2"]
+[ext_resource type="Texture2D" uid="uid://hq0ui2nnfn5p" path="res://assets/chapter1/puzzle1/background1.png" id="2_f1kwp"]
+[ext_resource type="Texture2D" uid="uid://e8pkig01bvlw" path="res://assets/chapter1/puzzle1/background2.png" id="4_fwxkt"]
+[ext_resource type="Texture2D" uid="uid://c4o5667c103tb" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/light/3fx.png" id="4_q6ilq"]
+[ext_resource type="Texture2D" uid="uid://d1w5oidnq6ukv" path="res://assets/chapter1/puzzle1/background3.png" id="6_gfkq5"]
+[ext_resource type="Texture2D" uid="uid://dyu44nese3nbw" path="res://assets/chapter1/puzzle1/background4a.png" id="8_ntehk"]
+[ext_resource type="Texture2D" uid="uid://ij4eoeilosjm" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/light/6fx.png" id="14_csdvb"]
+[ext_resource type="Texture2D" uid="uid://bwnb2n3jx2oer" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/light/8fx.png" id="16_sfrrw"]
+
+[sub_resource type="Animation" id="Animation_4hao3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_peph5"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_wscwp"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wscwp"]
+_data = {
+&"RESET": SubResource("Animation_4hao3"),
+&"fade_in": SubResource("Animation_peph5"),
+&"fade_out": SubResource("Animation_wscwp")
+}
+
+[node name="Puzzle1Background" type="Node2D"]
+script = ExtResource("1_ld4u2")
+metadata/_edit_horizontal_guides_ = [-167.0, 168.0]
+
+[node name="cave1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="cave1"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_f1kwp")
+
+[node name="light1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.47, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="light1"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_q6ilq")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="cave2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.45, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="cave2"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_fwxkt")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="light2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.57, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="light2"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("14_csdvb")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="cave3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.55, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="cave3"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_gfkq5")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 480)
+
+[node name="light3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="light3"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("16_sfrrw")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="cave5" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.7, 1)
+repeat_size = Vector2(576, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="cave5"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_ntehk")
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wscwp")
+}

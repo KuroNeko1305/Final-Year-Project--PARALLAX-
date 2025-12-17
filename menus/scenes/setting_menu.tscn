@@ -1,0 +1,458 @@
+[gd_scene load_steps=9 format=3 uid="uid://yxpruv52hk1n"]
+
+[ext_resource type="Shader" uid="uid://bfwmd8f5i7c7y" path="res://menus/scripts/shader/pause_menu.gdshader" id="1_7dqaf"]
+[ext_resource type="Script" uid="uid://cwkma3dhlrcau" path="res://menus/scripts/setting_menu.gd" id="1_rmsu3"]
+[ext_resource type="FontFile" uid="uid://btd0aaxocbl3a" path="res://menus/Fonts/pixel.ttf" id="2_jhf10"]
+[ext_resource type="Texture2D" uid="uid://d2sr0yv3ywngv" path="res://menus/assets/Spritesheet_UI_Flat_Animated.png" id="3_rmsu3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d6q5c"]
+shader = ExtResource("1_7dqaf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmsu3"]
+texture = ExtResource("3_rmsu3")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c4oyd"]
+texture = ExtResource("3_rmsu3")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(0, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7w1om"]
+texture = ExtResource("3_rmsu3")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(64, 96, 32, 32)
+
+[node name="SettingMenu" type="CanvasLayer"]
+script = ExtResource("1_rmsu3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_d6q5c")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+theme_override_font_sizes/font_size = 28
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+current_tab = 0
+
+[node name="Audio" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="MusicSection" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicSection/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Music Vollumn:"
+
+[node name="ValueLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicSection/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "100%"
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicSection"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_vertical = 1
+value = 100.0
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VoiceSection" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/VoiceSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/VoiceSection/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Voice Vollumn:"
+
+[node name="ValueLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/VoiceSection/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "100%"
+
+[node name="VoiceSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/VoiceSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 100.0
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFXSection" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXSection/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Sound Effects:"
+
+[node name="ValueLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXSection/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "100%"
+
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 100.0
+
+[node name="Input" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/Input"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="LeftSection" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/LeftSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Left:"
+
+[node name="RemapButton" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/LeftSection"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmsu3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c4oyd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7w1om")
+text = "remap"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RightSection" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/RightSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Right:"
+
+[node name="RemapButton" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/RightSection"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmsu3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c4oyd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7w1om")
+text = "remap"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="UpSection" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/UpSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Up:"
+
+[node name="RemapButton" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/UpSection"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmsu3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c4oyd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7w1om")
+text = "remap"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DownSection" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/DownSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Down:"
+
+[node name="RemapButton" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/DownSection"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmsu3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c4oyd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7w1om")
+text = "remap"
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="JumpSection" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/JumpSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Jump:"
+
+[node name="RemapButton" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/JumpSection"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmsu3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c4oyd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7w1om")
+text = "remap"
+
+[node name="HSeparator5" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HoldSection" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/HoldSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Pull/Push:"
+
+[node name="RemapButton" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/HoldSection"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmsu3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c4oyd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7w1om")
+text = "remap"
+
+[node name="HSeparator6" type="HSeparator" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DashSection" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/DashSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Dash:"
+
+[node name="RemapButton" type="Button" parent="MarginContainer/VBoxContainer/TabContainer/Input/MarginContainer/VBoxContainer/DashSection"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmsu3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c4oyd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7w1om")
+text = "remap"
+
+[node name="Graphics" type="ScrollContainer" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/TabContainer/Graphics"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Graphics/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="ThemeSection" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/ThemeSection"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "UI Theme:"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/ThemeSection"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jhf10")
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "System"
+popup/item_0/id = 0
+popup/item_1/text = "Light"
+popup/item_1/id = 1
+popup/item_2/text = "Dark"
+popup/item_2/id = 2
+
+[node name="BrightnessSection" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/BrightnessSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/BrightnessSection/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "Brightness:"
+
+[node name="ValueLabel" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/BrightnessSection/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_jhf10")
+text = "100%"
+
+[node name="BrightnessSlider" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Graphics/MarginContainer/VBoxContainer/BrightnessSection"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_vertical = 1
+value = 100.0
+
+[node name="BackBtn" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_jhf10")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_rmsu3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c4oyd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7w1om")
+text = "Back"

@@ -1,0 +1,415 @@
+[gd_scene load_steps=30 format=3 uid="uid://cntxlyowjg20a"]
+
+[ext_resource type="Script" uid="uid://7epg1l2hsm7a" path="res://menus/scripts/main_menu.gd" id="1_1ddq0"]
+[ext_resource type="Texture2D" uid="uid://0udu6o86u0oa" path="res://menus/assets/menu_background.png" id="2_eb3ir"]
+[ext_resource type="FontFile" uid="uid://cj1nk3m1i0s0n" path="res://menus/Fonts/PixelOperator8.ttf" id="3_5um5d"]
+[ext_resource type="Texture2D" uid="uid://d2sr0yv3ywngv" path="res://menus/assets/Spritesheet_UI_Flat_Animated.png" id="4_a2m5y"]
+[ext_resource type="FontFile" uid="uid://btd0aaxocbl3a" path="res://menus/Fonts/pixel.ttf" id="4_eb3ir"]
+[ext_resource type="PackedScene" uid="uid://yxpruv52hk1n" path="res://menus/scenes/setting_menu.tscn" id="6_eb3ir"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ddq0"]
+texture = ExtResource("2_eb3ir")
+modulate_color = Color(0.47788, 0.47788, 0.47788, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p03ih"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqa4x"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(0, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_05lm6"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(64, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tx3dr"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sabtx"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(0, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d2tgv"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(64, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4j0my"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ct1kt"]
+texture = ExtResource("4_a2m5y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2yqld"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(64, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a2m5y"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fwwav"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(0, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eb3ir"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_top = 2.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(64, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yd5l1"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(32, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pma8q"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyvcr"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(0, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8i50l"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(64, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wyxbn"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gvf1w"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(0, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qbkyd"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(64, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wv32v"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yheut"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(0, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gjb8g"]
+texture = ExtResource("4_a2m5y")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(64, 96, 32, 32)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ddq0")
+
+[node name="MainMenuPopup" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MainMenuPopup"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1ddq0")
+
+[node name="MainContainer" type="VBoxContainer" parent="MainMenuPopup"]
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PlayBtn" type="Button" parent="MainMenuPopup/MainContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_p03ih")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rqa4x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_05lm6")
+text = "PLAY"
+
+[node name="SettingBtn" type="Button" parent="MainMenuPopup/MainContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_tx3dr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sabtx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d2tgv")
+text = "Setting
+"
+
+[node name="ExitBtn" type="Button" parent="MainMenuPopup/MainContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_4j0my")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ct1kt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2yqld")
+text = "Exit
+"
+
+[node name="PlayContainer" type="VBoxContainer" parent="MainMenuPopup"]
+visible = false
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HostBtn" type="Button" parent="MainMenuPopup/PlayContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_a2m5y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fwwav")
+theme_override_styles/hover = SubResource("StyleBoxTexture_eb3ir")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_yd5l1")
+text = "Host"
+
+[node name="JoinBtn" type="Button" parent="MainMenuPopup/PlayContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_pma8q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_iyvcr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8i50l")
+text = "Join"
+
+[node name="BackBtn" type="Button" parent="MainMenuPopup/PlayContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_wyxbn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gvf1w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qbkyd")
+text = "BACK"
+
+[node name="HostContainer" type="VBoxContainer" parent="MainMenuPopup"]
+visible = false
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PlayerName" type="LineEdit" parent="MainMenuPopup/HostContainer"]
+custom_minimum_size = Vector2(100, 45)
+layout_mode = 2
+theme_override_constants/minimum_character_width = 0
+theme_override_fonts/font = ExtResource("3_5um5d")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Enter name"
+alignment = 1
+
+[node name="NewBtn" type="Button" parent="MainMenuPopup/HostContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_wv32v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yheut")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gjb8g")
+text = "NEW GAME"
+
+[node name="ContinueBtn" type="Button" parent="MainMenuPopup/HostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_wyxbn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gvf1w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qbkyd")
+text = "CONTINUE"
+
+[node name="BackBtn" type="Button" parent="MainMenuPopup/HostContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_wyxbn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gvf1w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qbkyd")
+text = "BACK"
+
+[node name="JoinContainer" type="VBoxContainer" parent="MainMenuPopup"]
+visible = false
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PlayerName" type="LineEdit" parent="MainMenuPopup/JoinContainer"]
+custom_minimum_size = Vector2(100, 45)
+layout_mode = 2
+theme_override_constants/minimum_character_width = 0
+theme_override_fonts/font = ExtResource("3_5um5d")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Enter name"
+alignment = 1
+
+[node name="IPServer" type="LineEdit" parent="MainMenuPopup/JoinContainer"]
+custom_minimum_size = Vector2(100, 45)
+layout_mode = 2
+theme_override_constants/minimum_character_width = 0
+theme_override_fonts/font = ExtResource("3_5um5d")
+theme_override_font_sizes/font_size = 20
+text = "localhost"
+placeholder_text = "Enter IP"
+alignment = 1
+
+[node name="PortServer" type="LineEdit" parent="MainMenuPopup/JoinContainer"]
+custom_minimum_size = Vector2(100, 45)
+layout_mode = 2
+theme_override_constants/minimum_character_width = 0
+theme_override_fonts/font = ExtResource("3_5um5d")
+theme_override_font_sizes/font_size = 20
+text = "42069"
+placeholder_text = "Enter Port"
+alignment = 1
+
+[node name="ConnectBtn" type="Button" parent="MainMenuPopup/JoinContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_wv32v")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yheut")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gjb8g")
+text = "CONNECT"
+
+[node name="BackBtn" type="Button" parent="MainMenuPopup/JoinContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_eb3ir")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_wyxbn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gvf1w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qbkyd")
+text = "BACK"
+
+[node name="SettingMenu" parent="." instance=ExtResource("6_eb3ir")]
+visible = false
+
+[connection signal="pressed" from="MainMenuPopup/MainContainer/PlayBtn" to="." method="_on_play_btn_pressed"]
+[connection signal="pressed" from="MainMenuPopup/MainContainer/SettingBtn" to="." method="_on_setting_btn_pressed"]
+[connection signal="pressed" from="MainMenuPopup/MainContainer/ExitBtn" to="." method="_on_exit_btn_pressed"]
+[connection signal="pressed" from="MainMenuPopup/PlayContainer/HostBtn" to="." method="_on_host_btn_pressed"]
+[connection signal="pressed" from="MainMenuPopup/PlayContainer/JoinBtn" to="." method="_on_join_btn_pressed"]
+[connection signal="pressed" from="MainMenuPopup/PlayContainer/BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="MainMenuPopup/HostContainer/NewBtn" to="." method="_on_new_btn_pressed"]
+[connection signal="pressed" from="MainMenuPopup/HostContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="MainMenuPopup/HostContainer/BackBtn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="MainMenuPopup/JoinContainer/ConnectBtn" to="." method="_on_connect_btn_pressed"]
+[connection signal="pressed" from="MainMenuPopup/JoinContainer/BackBtn" to="." method="_on_back_btn_pressed"]

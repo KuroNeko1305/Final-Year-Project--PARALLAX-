@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://doxjhm0cvr148"]
+
+[ext_resource type="PackedScene" uid="uid://ce3kwuuv2jbsh" path="res://scenes/items/red_gem.tscn" id="1_red_gem"]
+[ext_resource type="PackedScene" uid="uid://bo7xv3kwaobcx" path="res://scenes/items/blue_gem.tscn" id="2_blue_gem"]
+[ext_resource type="PackedScene" uid="uid://be4qwrcytm7ku" path="res://scenes/items/transition_door.tscn" id="3_door"]
+
+[node name="GemDemoScene" type="Node2D"]
+
+[node name="RedGem" parent="." instance=ExtResource("1_red_gem")]
+position = Vector2(400, 200)
+
+[node name="BlueGem" parent="." instance=ExtResource("2_blue_gem")]
+position = Vector2(200, 200)
+
+[node name="TransitionDoor" parent="." instance=ExtResource("3_door")]
+position = Vector2(300, 150)
+target_scene_path = "res://path/to/next/scene.tscn"
+
+[node name="Instructions" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 600.0
+grow_vertical = 0
+text = "Red Gem (right) - Only visible to Player_0
+Blue Gem (left) - Only visible to Player_1
+Door opens when both gems collected"
+horizontal_alignment = 1

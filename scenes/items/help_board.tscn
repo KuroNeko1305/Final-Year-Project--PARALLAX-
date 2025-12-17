@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://xgj8yv2qe7cf"]
+
+[ext_resource type="Script" uid="uid://j76nyuwlgvv8" path="res://scripts/items/help_board.gd" id="1_l50c8"]
+[ext_resource type="Texture2D" uid="uid://bxu8hrdkt4ep5" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Tileset/Pixel_Woods_Tileset.png" id="1_x4sfp"]
+[ext_resource type="Texture2D" uid="uid://d2sr0yv3ywngv" path="res://menus/assets/Spritesheet_UI_Flat_Animated.png" id="2_l50c8"]
+[ext_resource type="FontFile" uid="uid://btd0aaxocbl3a" path="res://menus/Fonts/pixel.ttf" id="3_n6i6o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6i6o"]
+atlas = ExtResource("2_l50c8")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84w2p"]
+atlas = ExtResource("2_l50c8")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htfs4"]
+atlas = ExtResource("2_l50c8")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bb25"]
+atlas = ExtResource("2_l50c8")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8g261"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6i6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84w2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htfs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bb25")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4sfp"]
+size = Vector2(22, 28)
+
+[node name="HelpBoard" type="Area2D"]
+script = ExtResource("1_l50c8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x4sfp")
+region_enabled = true
+region_rect = Rect2(259.99582, 180, 22.031036, 28)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -2.0
+offset_top = -52.749996
+offset_right = 8.0
+offset_bottom = -22.749996
+theme_override_fonts/font = ExtResource("3_n6i6o")
+theme_override_font_sizes/font_size = 10
+text = "E"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.7683716e-07, -40.75)
+scale = Vector2(0.75, 0.82812506)
+sprite_frames = SubResource("SpriteFrames_8g261")
+autoplay = "default"
+frame = 2
+frame_progress = 0.71641225
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x4sfp")

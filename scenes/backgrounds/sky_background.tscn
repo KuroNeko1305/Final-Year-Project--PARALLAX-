@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgw1kukglynbu"]
+
+[ext_resource type="Script" uid="uid://b1yyvcfk0lfjw" path="res://scripts/backgrounds/background.gd" id="1_221em"]
+[ext_resource type="Texture2D" uid="uid://qr8e56x784o5" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/sky/Background_2.png" id="1_nxmfe"]
+[ext_resource type="Texture2D" uid="uid://x0xbeggc0omm" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/sky/Background_1.png" id="2_kp6nd"]
+[ext_resource type="Texture2D" uid="uid://r71qwx2uakhk" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/light/Lights 1.png" id="3_hv5e6"]
+[ext_resource type="Texture2D" uid="uid://bqkhrpfco4rbo" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/light/Lights 2.png" id="4_6vkiu"]
+
+[sub_resource type="Animation" id="Animation_4hao3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_peph5"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_wscwp"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wscwp"]
+_data = {
+&"RESET": SubResource("Animation_4hao3"),
+&"fade_in": SubResource("Animation_peph5"),
+&"fade_out": SubResource("Animation_wscwp")
+}
+
+[node name="SkyBackground" type="Node2D"]
+modulate = Color(1, 1, 1, 0)
+script = ExtResource("1_221em")
+
+[node name="sky1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.95, 1)
+repeat_size = Vector2(496, 0)
+autoscroll = Vector2(5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="sky1"]
+texture = ExtResource("1_nxmfe")
+
+[node name="sky2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.05, 1)
+repeat_size = Vector2(496, 0)
+autoscroll = Vector2(8, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="sky2"]
+texture = ExtResource("2_kp6nd")
+
+[node name="light1" type="Parallax2D" parent="."]
+z_index = 100
+scroll_scale = Vector2(1.5, 1)
+repeat_size = Vector2(750, 0)
+autoscroll = Vector2(7, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="light1"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("3_hv5e6")
+
+[node name="light2" type="Parallax2D" parent="."]
+z_index = 100
+skew = -0.284489
+scroll_scale = Vector2(2, 1)
+repeat_size = Vector2(600, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="light2"]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("4_6vkiu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wscwp")
+}

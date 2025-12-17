@@ -1,0 +1,130 @@
+[gd_scene load_steps=12 format=3 uid="uid://df54pfv56fjxa"]
+
+[ext_resource type="Texture2D" uid="uid://c42lo0rl08sf0" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/mountain/far_mountains_fc.png" id="1_cft3g"]
+[ext_resource type="Texture2D" uid="uid://qr8e56x784o5" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/sky/Background_2.png" id="1_i7svy"]
+[ext_resource type="Script" uid="uid://b1yyvcfk0lfjw" path="res://scripts/backgrounds/background.gd" id="1_nqije"]
+[ext_resource type="Texture2D" uid="uid://dera25wjvobeu" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/mountain/grassy_mountains_fc.png" id="2_v7iqw"]
+[ext_resource type="Texture2D" uid="uid://x0xbeggc0omm" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/sky/Background_1.png" id="2_y4wdd"]
+[ext_resource type="Texture2D" uid="uid://cy2yd3ug6fy3o" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/mountain/clouds_mid_fc.png" id="3_i7svy"]
+[ext_resource type="Texture2D" uid="uid://20th27hj80n8" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Backgrounds/mountain/clouds_front_fc.png" id="4_y4wdd"]
+
+[sub_resource type="Animation" id="Animation_4hao3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_peph5"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_wscwp"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wscwp"]
+_data = {
+&"RESET": SubResource("Animation_4hao3"),
+&"fade_in": SubResource("Animation_peph5"),
+&"fade_out": SubResource("Animation_wscwp")
+}
+
+[node name="MountainBackground" type="Node2D"]
+modulate = Color(1, 1, 1, 0)
+script = ExtResource("1_nqije")
+
+[node name="sky1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.95, 1)
+repeat_size = Vector2(496, 0)
+autoscroll = Vector2(5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="sky1"]
+modulate = Color(0.843795, 0.838172, 0.83051, 1)
+texture = ExtResource("1_i7svy")
+
+[node name="sky2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.05, 1)
+repeat_size = Vector2(496, 0)
+autoscroll = Vector2(8, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="sky2"]
+modulate = Color(0.843795, 0.838172, 0.83051, 1)
+texture = ExtResource("2_y4wdd")
+
+[node name="mountain1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.95, 1)
+repeat_size = Vector2(384, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="mountain1"]
+texture = ExtResource("1_cft3g")
+offset = Vector2(0, 20)
+
+[node name="mountain2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.97, 1)
+repeat_size = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="mountain2"]
+texture = ExtResource("2_v7iqw")
+offset = Vector2(0, 20)
+
+[node name="cloud1" type="Parallax2D" parent="."]
+repeat_size = Vector2(384, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="cloud1"]
+texture = ExtResource("3_i7svy")
+
+[node name="mountain3" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.03, 1)
+repeat_size = Vector2(384, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="mountain3"]
+texture = ExtResource("1_cft3g")
+offset = Vector2(60, 110)
+
+[node name="cloud2" type="Parallax2D" parent="."]
+z_index = 100
+scroll_scale = Vector2(1.2, 1)
+repeat_size = Vector2(384, 0)
+autoscroll = Vector2(40, 0)
+
+[node name="Sprite2D5" type="Sprite2D" parent="cloud2"]
+texture = ExtResource("4_y4wdd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wscwp")
+}

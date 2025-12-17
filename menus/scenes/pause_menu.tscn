@@ -1,0 +1,147 @@
+[gd_scene load_steps=15 format=3 uid="uid://cij7tthlsec38"]
+
+[ext_resource type="Script" uid="uid://bgg773w5er8uj" path="res://menus/scripts/pause_menu.gd" id="1_j5fuv"]
+[ext_resource type="FontFile" uid="uid://btd0aaxocbl3a" path="res://menus/Fonts/pixel.ttf" id="2_ps6sx"]
+[ext_resource type="Shader" uid="uid://bfwmd8f5i7c7y" path="res://menus/scripts/shader/pause_menu.gdshader" id="2_spswp"]
+[ext_resource type="Texture2D" uid="uid://d2sr0yv3ywngv" path="res://menus/assets/Spritesheet_UI_Flat_Animated.png" id="3_spswp"]
+[ext_resource type="Texture2D" uid="uid://moyuud0pq43h" path="res://menus/assets/menu_background.jpg" id="3_vx2vn"]
+[ext_resource type="Script" uid="uid://bqrth8mchd4bf" path="res://menus/scripts/menu_navigator.gd" id="5_vx2vn"]
+[ext_resource type="PackedScene" uid="uid://yxpruv52hk1n" path="res://menus/scenes/setting_menu.tscn" id="7_m4wix"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vx2vn"]
+shader = ExtResource("2_spswp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8b56s"]
+texture = ExtResource("3_spswp")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4wix"]
+texture = ExtResource("3_spswp")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(0, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vx2vn"]
+texture = ExtResource("3_spswp")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(64, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2hlc"]
+texture = ExtResource("3_spswp")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(96, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cli0i"]
+texture = ExtResource("3_spswp")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+region_rect = Rect2(0, 96, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iu0tr"]
+texture = ExtResource("3_spswp")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(64, 96, 32, 32)
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_j5fuv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(571.5, 321)
+scale = Vector2(1.57201, 1.56039)
+texture = ExtResource("3_vx2vn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vx2vn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(230, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -100.0
+offset_right = 115.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="WaitLabel" type="Label" parent="PauseContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_ps6sx")
+theme_override_font_sizes/font_size = 20
+text = "Wait label"
+horizontal_alignment = 1
+
+[node name="ContinueBtn" type="Button" parent="PauseContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ps6sx")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_8b56s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m4wix")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vx2vn")
+text = "CONTINUE"
+
+[node name="SettingBtn" type="Button" parent="PauseContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ps6sx")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_8b56s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m4wix")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vx2vn")
+text = "SETTING"
+
+[node name="BackBtn" type="Button" parent="PauseContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ps6sx")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_r2hlc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cli0i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_iu0tr")
+text = "BACK"
+
+[node name="MenuNavigator" type="Node" parent="."]
+script = ExtResource("5_vx2vn")
+
+[node name="SettingMenu" parent="." instance=ExtResource("7_m4wix")]
+visible = false
+
+[connection signal="pressed" from="PauseContainer/ContinueBtn" to="." method="_on_continue_btn_pressed"]
+[connection signal="pressed" from="PauseContainer/SettingBtn" to="." method="_on_setting_btn_pressed"]
+[connection signal="pressed" from="PauseContainer/BackBtn" to="." method="_on_back_btn_pressed"]

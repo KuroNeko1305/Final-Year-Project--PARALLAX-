@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://y8m78d5ihf5p"]
+
+[ext_resource type="Texture2D" uid="uid://bxu8hrdkt4ep5" path="res://assets/introduction/assets/Pixel Woods Asset Pack/Tileset/Pixel_Woods_Tileset.png" id="1_y6v03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2de48"]
+size = Vector2(48, 16)
+
+[node name="Platfoms" type="Node2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_y6v03")
+region_enabled = true
+region_rect = Rect2(16, 80, 48, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_2de48")
+one_way_collision = true

@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://03dghhqvf8bs"]
+
+[ext_resource type="Script" uid="uid://bwyfa8kebxy3k" path="res://scripts/controls/chatbox.gd" id="1_h4sh1"]
+
+[node name="Chatbox" type="CanvasLayer"]
+script = ExtResource("1_h4sh1")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 800.0
+offset_top = 400.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+follow_focus = true
+
+[node name="MessageList" type="RichTextLabel" parent="Panel/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+scroll_following = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MessageInput" type="LineEdit" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Type your message..."
+
+[node name="SendButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Send"
+
+[connection signal="text_submitted" from="Panel/VBoxContainer/HBoxContainer/MessageInput" to="." method="_on_message_submitted"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/SendButton" to="." method="_on_send_button_pressed"]
